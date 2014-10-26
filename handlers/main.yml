@@ -1,0 +1,8 @@
+- name: restart supervisor
+  shell: '{{supervisord_binary}}; cat {{supervisor_pidfile}} | xargs kill -1; {{supervisord_binary}}; true'
+
+- name: start supervisor
+  command: '{{supervisord_binary}}'
+
+- name: stop supervisor
+  shell: cat {{supervisor_pidfie}} | xargs kill -9 ; true

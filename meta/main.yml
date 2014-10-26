@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Steve Gargan
+  description: Role to install supervisord, attempting to be as generic as possible
+  license: MIT
+  min_ansible_version: 1.7
+
+  platforms:
+    - name: GenericUNIX
+      versions:
+        - any
+
+  categories:
+    - system
+
+dependencies: []

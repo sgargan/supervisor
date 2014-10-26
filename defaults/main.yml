@@ -1,0 +1,45 @@
+pip_url: https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+
+supervisor_version: 3.1.2
+supervisord_binary: /usr/local/bin/supervisord
+
+supervisor_socket: /var/run/supervisor.sock
+supervisor_chmod: '0700'
+supervisor_chown: '{{supervisor_user}}:{{supervisor_group}}'
+
+supervisor_user: root
+supervisor_group: root
+supervisor_socket_auth: false
+supervisor_username: supervisor
+supervisor_password: supervisor
+
+supervisor_inet_interface: 127.0.0.1
+supervisor_inet_port: 9001
+supervisor_inet_username: supervisor
+supervisor_inet_password: sup3r51$0r
+
+supervisor_log_dir: /var/log/supervisor
+supervisor_log_file: '{{supervisor_log_dir}}/supervisor.log'
+supervisor_logfile_maxbytes: 10MB
+supervisor_logfile_backups: 10
+supervisor_loglevel: info
+
+supervisor_pidfile: /var/run/supervisord.pid
+supervisor_umask: '022'
+supervisor_nodaemon: false
+
+supervisor_minfds: 1024
+supervisor_minprocs: 200
+
+supervisor_identifier: supervisor
+supervisor_changeto_directory: /tmp
+supervisor_nocleanup: true
+supervisor_childlogdir: '{{supervisor_log_dir}}/childlogs'
+supervisor_strip_ansi: false
+supervisor_environment: key="value"
+supervisor_config_dir: /etc/supervisor.d/
+
+supervisorctl_serverurl: 'unix://{{supervisor_socket}}'
+supervisorctl_username: '{{supervisor_username}}'
+supervisorctl_password: '{{supervisor_password}}'
+supervisorctl_prompt: supervisor

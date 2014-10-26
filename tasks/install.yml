@@ -1,0 +1,14 @@
+- name: get the pip & setuptools install-scripts
+  get_url: dest=/tmp url={{pip_url}} mode=0644
+
+- name: make sure pip is installed
+  shell: chdir=/tmp python get-pip.py
+
+- name: install supervisor
+  pip: name=supervisor version={{ supervisor_version }}
+
+- name: make sure the supervisor conf dir exists
+  file: path={{item}} state=directory mode=0755 owner={{supervisor_user}} group={{supervisor_group}}
+  with_items:
+    - '{{ supervisor_config_dir }}'
+    - '{{ supervisor_log_dir }}'
