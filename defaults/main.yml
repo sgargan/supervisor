@@ -1,4 +1,4 @@
-pip_url: https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+pip_url: https://bootstrap.pypa.io/get-pip.py
 
 supervisor_version: 3.1.2
 supervisord_binary: /usr/local/bin/supervisord
