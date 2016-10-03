@@ -3,4 +3,4 @@
   notify: restart supervisor
 
 - name: add cron job to insure that supervisor is running
-  cron: name="make sure supervisor is running" minute="*" user="root" job="ps -deaf | grep supervisord | grep -v grep && {{supervisord_binary}}"
+  cron: name="make sure supervisor is running" minute="*" user="root" job="ps -deaf | grep supervisord | grep -v grep || {{supervisord_binary}}"
